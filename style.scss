@@ -1,0 +1,139 @@
+:root {
+  --primary-color: #289ee2;
+  --secondary-color: #cdedff;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+body {
+  background: var(--secondary-color);
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  overflow: hidden;
+}
+
+h1,
+p {
+  margin: 20px 0 0;
+  color: var(--primary-color);
+  
+}
+
+.game-container {
+  padding: 20px 30px;
+  position: relative;
+  margin: auto;
+  min-height: 350px;
+  width: 450px;
+}
+.figure-container {
+  fill: transparent;
+  stroke: #7c3c08;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  .figure-part {
+    stroke: #ebbb93;
+  }
+}
+
+.figure-part {
+  display: none;
+}
+.wrong-letters-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  max-width: 400px;
+  flex-wrap: wrap;
+  .wrong{
+    font-weight: bold;
+    color: #fc6a6a;    margin: 0 0 5px;
+   }
+
+  span {
+    font-size: 25px;
+    color: #f13333;
+    // display: flex;
+    // border: 1px solid red;
+    // width: 40px;
+    // height:40px;
+    // justify-content: center;
+    // align-items: center;
+    // margin-bottom: 5px;
+  }
+}
+.word {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.letter {
+  border-bottom: 3px solid var(--primary-color);
+  display: inline-flex;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3px;
+  height: 50px;
+  width: 20px;
+  color: var(--primary-color);
+}
+
+.popup-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  //   display: flex;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.popup {
+  background: #2980b9;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px 3px grba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  button {
+    cursor: pointer;
+    background-color: #fff;
+    color: #2980b9;
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+.notification-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px 10px 0 0;
+  padding: 15px 20px;
+  position: absolute;
+  bottom: -50px;
+  transition: transform 0.3s ease-in-out;
+  &.show {
+    transform: translateY(-50px);
+  }
+}
