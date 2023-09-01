@@ -30,10 +30,10 @@ function displayWord() {
   }
 }
 function updateWrongLettersEl() {
-    console.log(wrongLetters);
+
   wrongLettersEl.innerHTML = `
     ${wrongLetters.length > 0 ? "<p class='wrong'>Wrong</p>" : ""}
-    ${wrongLetters.map((let) => `<span>${let}</span>`)} 
+    ${wrongLetters.map((let) => `<span>${let}</span>`).join('')} 
     `;
   firureParts.forEach((part, index) => {
     const errors = wrongLetters.length;
